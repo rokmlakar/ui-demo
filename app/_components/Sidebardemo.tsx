@@ -12,6 +12,7 @@ import { ExpandableCardGridDemo } from "./ExpandableCardGrid";
 import { PlaceholdersAndVanishInputDemo } from "./PlaceholdersAndVanishInput";
 import { TimelineDemo } from "./Timeline";
 import { TabsDemo } from "./Tabs";
+import axios from "axios";
 
 export function SidebarDemo() {
   const links = [
@@ -144,20 +145,16 @@ const Pathfinder = () => {
         formData.append("file", files[0]); // Assuming `files` is an array
         formData.append("desired_job_description", input); // Assuming `input` is the string
 
-        // Make the API request
-        const response = await fetch("https://knowledgeinnovation-dev0.kamaruladha.dev/get_courses", {
-          method: "POST",
-          body: formData,
+        // Make the API request using Axios
+        const response = await axios.post("https://knowledgeinnovation-dev0.kamaruladha.dev/get_courses", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         });
 
-        // Check for response status
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        setApiResponse(data.top_courses_per_skill);
-        console.log("API Response:", data);
+        // Handle the response
+        setApiResponse(response.data.top_courses_per_skill);
+        console.log("API Response:", response.data);
       } catch (error) {
         console.error("API Call Failed:", error);
       }
