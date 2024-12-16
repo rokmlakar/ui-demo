@@ -156,7 +156,7 @@ const Pathfinder = () => {
         }
 
         const data = await response.json();
-        setApiResponse(data);
+        setApiResponse(data.top_courses_per_skill);
         console.log("API Response:", data);
       } catch (error) {
         console.error("API Call Failed:", error);
