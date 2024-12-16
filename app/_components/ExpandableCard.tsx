@@ -119,7 +119,7 @@ export function ExpandableCardDemo({ apiResponse = [] }) {
                   </motion.p>
                 </div>
               </div>
-              <motion.button layoutId={`button-${esco_skill_name}-${id}`} className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0">
+              <motion.button layoutId={`button-${esco_skill_name}-${id}`} className="px-4 py-2 min-w-[100px] ml-2 max-w-[100px] text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0">
                 View More
               </motion.button>
             </motion.div>
