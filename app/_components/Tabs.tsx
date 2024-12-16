@@ -75,7 +75,7 @@ export function TabsDemo() {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-blue-700 to-blue-900">
           <p>About framework page</p>
-          <ImagesSliderDemo images={images2} />
+          <ImagesSliderDemo images={images3} />
           {/* <img
             src="https://i.postimg.cc/HkwhGYPB/sfr5.png"
             alt="fff"
@@ -92,7 +92,7 @@ export function TabsDemo() {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-blue-700 to-blue-900">
           <p>Sunburst chart</p>
-          <ImagesSliderDemo images={images2} />
+          <ImagesSliderDemo images={images4} />
           {/* <img
             src="https://i.postimg.cc/g04tJMph/sfr6.png"
             alt="fff"
@@ -109,7 +109,7 @@ export function TabsDemo() {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-blue-700 to-blue-900">
           <p>Add skills page</p>
-          <ImagesSliderDemo images={images2} />
+          <ImagesSliderDemo images={images5} />
           {/* <img
             src="https://i.postimg.cc/VLt2qqds/sfr.png"
             alt="fff"

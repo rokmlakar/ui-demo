@@ -134,16 +134,23 @@ const Pathfinder = () => {
   const [input, setInput] = useState("");
 
   const handleFileUpload = async () => {
+    console.log(files, input);
     setFileUploaded(!fileUploaded);
+
     if (!fileUploaded) {
       try {
-        const response = await fetch("https://knowledgeinnovation-dev0.kamaruladha.dev/", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+        // Create FormData object to handle the file and string data
+        const formData = new FormData();
+        formData.append("file", files[0]); // Assuming `files` is an array
+        formData.append("desired_job_description", input); // Assuming `input` is the string
+
+        // Make the API request
+        const response = await fetch("https://knowledgeinnovation-dev0.kamaruladha.dev/get_courses", {
+          method: "POST",
+          body: formData,
         });
 
+        // Check for response status
         if (!response.ok) {
           throw new Error(`Error: ${response.status} - ${response.statusText}`);
         }
@@ -194,7 +201,7 @@ const Pathfinder = () => {
                   </div>
                 </button>
               </div>
-              {viewMode === "card" ? <ExpandableCardDemo /> : <ExpandableCardGridDemo />}
+              {viewMode === "card" ? <ExpandableCardDemo apiResponse={apiResponse} /> : <ExpandableCardGridDemo apiResponse={apiResponse} />}
             </div>
           )}
           <div className="mt-4">
